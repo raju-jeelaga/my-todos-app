@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { TodosListComponent } from './todo/todos-list/todos-list.component';
 import { AddEditTodoComponent } from './todo/add-edit-todo/add-edit-todo.component';
@@ -15,7 +16,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes),
+    HttpClientModule
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

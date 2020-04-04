@@ -1,0 +1,36 @@
+*, *:before, *:after{
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #333;
+}
+.container{
+    width:800px;
+    margin:0 auto;
+}
+.header{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0px;
+}
+.nav-links ul{
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+.nav-links li a{
+    background:red;
+    padding:10px 15px;
+    color:#fff;
+}
+footer{
+    text-align: center;
+}
+main{
+    margin:50px 0px;
+}
