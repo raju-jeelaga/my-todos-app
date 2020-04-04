@@ -67,7 +67,7 @@
           "configurations": {
             "production": {
               "browserTarget": "my-todos-app:build:production",
-              "port": 1219
+              "port": 5000
             }
           }
         },
