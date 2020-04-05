@@ -10,7 +10,7 @@ export class TodosService {
 
   apiUrl: string = environment.apiUrl;
 
-  constructor( private http: HttpClient) { }
+  constructor( private http: HttpClient ) { }
 
  getTodos(): Observable<ITodo[]>{
    return this.http.get(`${this.apiUrl}/todos`).pipe(
@@ -19,4 +19,10 @@ export class TodosService {
      })
    )
  }
+
+ deleteTodo(todoId: string): Observable<any> {
+  return this.http.delete(`${this.apiUrl}/todos/${todoId}`);
+}
+
+
 }
