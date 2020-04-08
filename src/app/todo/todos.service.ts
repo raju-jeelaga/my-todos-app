@@ -12,13 +12,28 @@ export class TodosService {
 
   constructor( private http: HttpClient ) { }
 
- getTodos(): Observable<ITodo[]>{
-   return this.http.get(`${this.apiUrl}/todos`).pipe(
-     map( (data) =>{
-       return data as ITodo[];
-     })
-   )
- }
+  getTodos(searchTerm?: string): Observable<ITodo[]>{
+    let url = `${this.apiUrl}/todos`;
+    if(searchTerm) {
+      url += `?search=${searchTerm}`
+    }
+
+    return this.http.get(url)
+      .pipe(
+        map(response => {
+          return response as ITodo[];
+        })
+      )
+  }
+
+  getTodo(todoId: string): Observable<ITodo>{
+    return this.http.get(`${this.apiUrl}/todos/${todoId}`)
+      .pipe(
+        map(response => {
+          return response as ITodo;
+        })
+      )
+  }
 
  deleteTodo(todoId: string): Observable<any> {
   return this.http.delete(`${this.apiUrl}/todos/${todoId}`);
